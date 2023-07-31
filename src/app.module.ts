@@ -11,8 +11,8 @@ import { Personal } from './entities/personal.entity';
     TypeOrmModule.forRoot({
       ...require('../typeorm.config'),
       entities: [
-        Account,
-        Personal,
+        Account, 
+        Personal
       ],
     }),
     AuthenticationModule],

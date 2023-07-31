@@ -14,7 +14,6 @@ export class AuthenticationController {
       const password = req.password;
 
       const res = this.authenticationService.loginProcess(username, password)
-      
       return res
     } catch (err) {
       return err

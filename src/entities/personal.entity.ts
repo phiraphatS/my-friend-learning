@@ -6,12 +6,11 @@ export class Personal {
   id: number;
 
   @Column()
-  title_name: string;
+  Title_name: string;
 
   @Column()
-  first_name: string;
+  frist_name: string;
 
   @Column()
-  last_name: string;
-
+  passlast_name: string;
 }
