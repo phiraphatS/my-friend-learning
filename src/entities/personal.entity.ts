@@ -1,17 +1,17 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
-export class Account {
+export class Personal {
   @PrimaryGeneratedColumn()
   id: number;
 
   @Column()
-  name: string;
+  title_name: string;
 
   @Column()
-  email: string;
+  first_name: string;
 
   @Column()
-  password: string;
+  last_name: string;
 
 }
