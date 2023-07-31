@@ -1,24 +1,23 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable } from '@nestjs/common'; 
+import { InjectRepository } from '@nestjs/typeorm';
+import { Account } from 'src/entities/account.entity';
+import { Repository } from 'typeorm';
 
 @Injectable()
 export class AuthenticationService {
-  create(createAuthenticationDto: any) {
-    return 'This action adds a new authentication';
-  }
 
-  findAll() {
-    return `This action returns all authentication`;
-  }
+  constructor(
+    @InjectRepository(Account)
+    private AccountRepository: Repository<Account>,
+) {}
 
-  findOne(id: number) {
-    return `This action returns a #${id} authentication`;
+async loginpProcess (username : string, password : string){
+  try{
+    const resAccount = await this.AccountRepository.find();
+    
+    return  resAccount
+  }catch (err) {
+    throw err.message
   }
-
-  update(id: number, updateAuthenticationDto: any) {
-    return `This action updates a #${id} authentication`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} authentication`;
-  }
+}
 }
