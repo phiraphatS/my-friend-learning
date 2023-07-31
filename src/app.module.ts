@@ -10,12 +10,9 @@ import { Personal } from './entities/personal.entity';
   imports: [
     TypeOrmModule.forRoot({
       ...require('../typeorm.config'),
-      entities: [
-        Account, 
-        Personal
-      ],
+      entities: [Account,Personal],
     }),
-    AuthenticationModule],
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
